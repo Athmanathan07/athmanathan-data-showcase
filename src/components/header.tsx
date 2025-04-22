@@ -36,9 +36,7 @@ const Header = () => {
       }`}
     >
       <div className="container mx-auto py-4 flex items-center justify-between">
-        <a href="#" className="text-2xl font-heading font-semibold text-portfolio-gray-900 dark:text-white underline-animated flex items-center gap-2">
-          {/* Creative accent with animated mail icon */}
-          <Mail className="text-portfolio-accent animate-bounce-once w-7 h-7 mr-2 drop-shadow-lg" />
+        <a href="#" className="text-2xl font-heading font-semibold text-portfolio-gray-900 dark:text-white underline-animated">
           Athmanathan<span className="text-portfolio-accent">.MTA</span>
         </a>
 
@@ -57,15 +55,14 @@ const Header = () => {
 
         <div className="hidden md:flex items-center space-x-4">
           <div className="flex items-center space-x-2">
-            {/* Email Icon - highlighted for visibility */}
             <a
               href="mailto:athmanathanmta@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Email"
-              className="p-2 text-portfolio-accent bg-white dark:bg-portfolio-gray-900 rounded-full shadow-md hover:scale-110 transition-all group ring-2 ring-portfolio-accent/20"
+              className="p-2 text-portfolio-gray-700 dark:text-portfolio-gray-300 hover:text-portfolio-accent dark:hover:text-portfolio-accent transition-all group"
             >
-              <Mail className="h-6 w-6 animate-bounce-once group-hover:animate-bounce text-portfolio-accent" />
+              <Mail className="h-5 w-5 group-hover:animate-bounce" />
             </a>
             <a
               href="https://github.com/Athmanathan07"
@@ -90,7 +87,7 @@ const Header = () => {
 
           <Button
             asChild
-            className="bg-portfolio-accent hover:bg-portfolio-accent/90 text-white transition-transform hover:scale-110 shadow-lg"
+            className="bg-portfolio-accent hover:bg-portfolio-accent/90 text-white transition-transform hover:scale-105"
           >
             <a
               href="https://drive.google.com/file/d/1lsUCymRLmFfyXZW5pYHvZTPZ9g69VAF7/view"
@@ -107,23 +104,23 @@ const Header = () => {
           <ThemeToggle />
           <button
             aria-label="Toggle menu"
-            className="p-2 text-portfolio-accent focus:outline-none"
+            className="p-2 text-portfolio-gray-800 dark:text-portfolio-gray-200"
             onClick={toggleMenu}
           >
             <div className="w-6 flex flex-col gap-1.5">
               <span
-                className={`block h-0.5 bg-current rounded transition-transform duration-300 ${
-                  isMenuOpen ? "rotate-45 translate-y-2 bg-portfolio-accent" : ""
+                className={`block h-0.5 bg-current transform transition-transform duration-300 ${
+                  isMenuOpen ? "rotate-45 translate-y-2" : ""
                 }`}
               ></span>
               <span
-                className={`block h-0.5 bg-current rounded transition-opacity duration-300 ${
+                className={`block h-0.5 bg-current transition-opacity duration-300 ${
                   isMenuOpen ? "opacity-0" : "opacity-100"
                 }`}
               ></span>
               <span
-                className={`block h-0.5 bg-current rounded transition-transform duration-300 ${
-                  isMenuOpen ? "-rotate-45 -translate-y-2 bg-portfolio-accent" : ""
+                className={`block h-0.5 bg-current transform transition-transform duration-300 ${
+                  isMenuOpen ? "-rotate-45 -translate-y-2" : ""
                 }`}
               ></span>
             </div>
@@ -151,15 +148,14 @@ const Header = () => {
             </a>
           ))}
           <div className="flex items-center space-x-4 px-4 pt-4 border-t border-portfolio-gray-200 dark:border-portfolio-gray-700">
-            {/* Same: Email icon more visible */}
             <a
               href="mailto:athmanathanmta@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Email"
-              className="p-2 text-portfolio-accent bg-white dark:bg-portfolio-gray-900 rounded-full shadow-md hover:scale-110 transition-all group ring-2 ring-portfolio-accent/20"
+              className="p-2 text-portfolio-gray-700 dark:text-portfolio-gray-300 hover:text-portfolio-accent dark:hover:text-portfolio-accent group"
             >
-              <Mail className="h-6 w-6 animate-bounce-once group-hover:animate-bounce text-portfolio-accent" />
+              <Mail className="h-5 w-5 group-hover:animate-bounce" />
             </a>
             <a
               href="https://github.com/Athmanathan07"
@@ -183,7 +179,7 @@ const Header = () => {
           <div className="px-4 pb-4">
             <Button
               asChild
-              className="w-full bg-portfolio-accent hover:bg-portfolio-accent/90 text-white transition-transform hover:scale-110 shadow-lg"
+              className="w-full bg-portfolio-accent hover:bg-portfolio-accent/90 text-white transition-transform hover:scale-105"
             >
               <a
                 href="https://drive.google.com/file/d/1lsUCymRLmFfyXZW5pYHvZTPZ9g69VAF7/view"
