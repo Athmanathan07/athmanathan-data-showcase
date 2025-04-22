@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Github, Linkedin, Mail, MapPin } from "lucide-react";
 import { Button } from "../ui/button";
@@ -95,28 +94,28 @@ const ContactSection = () => {
   const contactInfo = [
     {
       id: 1,
-      icon: <Mail className="h-5 w-5 text-portfolio-accent animate-pulse" />,
+      icon: <Mail className="h-5 w-5 text-portfolio-accent" />,
       title: "Email",
       value: "athmanathanmta@gmail.com",
       link: "mailto:athmanathanmta@gmail.com"
     },
     {
       id: 2,
-      icon: <Linkedin className="h-5 w-5 text-portfolio-accent animate-bounce" />,
+      icon: <Linkedin className="h-5 w-5 text-portfolio-accent" />,
       title: "LinkedIn",
       value: "linkedin.com/in/athmanathan-mta",
       link: "https://linkedin.com/in/athmanathan-mta"
     },
     {
       id: 3,
-      icon: <Github className="h-5 w-5 text-portfolio-accent animate-spin-slow" />,
+      icon: <Github className="h-5 w-5 text-portfolio-accent" />,
       title: "GitHub",
       value: "github.com/Athmanathan07",
       link: "https://github.com/Athmanathan07"
     },
     {
       id: 4,
-      icon: <MapPin className="h-5 w-5 text-portfolio-accent animate-bounce-once" />,
+      icon: <MapPin className="h-5 w-5 text-portfolio-accent" />,
       title: "Location",
       value: "Sivakasi, Tamil Nadu",
       link: null
@@ -124,18 +123,16 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="bg-portfolio-gray-50 dark:bg-portfolio-gray-800">
+    <section id="contact" className="bg-portfolio-gray-50 dark:bg-portfolio-gray-800 font-sans">
       <div className="container mx-auto px-4">
         <h2 className="section-title colourful-underline animate-fade-in">Contact Me</h2>
-        
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div className={isVisible ? 'animate-slide-up' : 'opacity-0'}>
             <h3 className="text-2xl font-medium mb-6">Get in Touch</h3>
-            
             <div className="space-y-6">
               {contactInfo.map(item => (
                 <div key={item.id} className="flex items-start group">
-                  <div className="p-3 bg-white dark:bg-portfolio-gray-900 rounded-full shadow-md mr-4 group-hover:scale-110 transition-transform animate-pulse">
+                  <div className="p-3 bg-white dark:bg-portfolio-gray-900 rounded-full shadow-md mr-4 hover-scale-soft">
                     {item.icon}
                   </div>
                   <div>
@@ -157,13 +154,11 @@ const ContactSection = () => {
               ))}
             </div>
           </div>
-          
-          <div className={`bg-white dark:bg-portfolio-gray-900 rounded-lg shadow-md p-6 ${isVisible ? 'animate-slide-up animate-delay-200' : 'opacity-0'}`}>
+          <div className={`bg-white dark:bg-portfolio-gray-900 rounded-xl shadow-md p-6 ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}>
             <h3 className="text-2xl font-medium mb-6 flex items-center gap-2">
-              <Mail className="w-6 h-6 text-portfolio-accent animate-bounce-once mr-1" />
+              <Mail className="w-6 h-6 text-portfolio-accent mr-1" />
               Send Me a Message
             </h3>
-            
             {isSubmitted ? (
               <div className="p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-900 text-green-800 dark:text-green-300 rounded-md animate-fade-in">
                 Thank you! Your message has been sent successfully.
@@ -226,7 +221,7 @@ const ContactSection = () => {
                 
                 <Button 
                   type="submit" 
-                  className="w-full bg-portfolio-accent hover:bg-portfolio-accent/90 animate-bounce-once"
+                  className="w-full bg-portfolio-accent hover:bg-portfolio-accent/90"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}

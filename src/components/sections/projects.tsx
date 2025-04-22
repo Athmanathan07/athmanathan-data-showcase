@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 
 interface Project {
@@ -49,15 +48,14 @@ const ProjectsSection = () => {
   ];
 
   return (
-    <section id="projects" className="bg-white dark:bg-portfolio-gray-900">
+    <section id="projects" className="bg-white dark:bg-portfolio-gray-900 font-sans">
       <div className="container mx-auto px-4">
         <h2 className="section-title colourful-underline animate-fade-in">My Projects</h2>
-        
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <div 
               key={project.id}
-              className={`overflow-hidden rounded-lg shadow-md transition-all hover:shadow-portfolio-accent/30 hover:-translate-y-2 hover:scale-105 ${
+              className={`overflow-hidden rounded-xl shadow-lg transition-all hover-scale-soft bg-white dark:bg-portfolio-gray-800 border border-portfolio-gray-200 dark:border-portfolio-gray-700 ${
                 isVisible ? 'animate-slide-up' : 'opacity-0'
               }`}
               style={{ animationDelay: `${index * 150}ms` }}
@@ -66,21 +64,18 @@ const ProjectsSection = () => {
                 <img 
                   src={project.image} 
                   alt={project.title} 
-                  className="w-full h-full object-cover transition-transform group-hover:scale-110 duration-500"
+                  className="w-full h-full object-cover transition-transform group-hover:scale-105 duration-500"
                 />
-                {/* Accent overlay on hover for creativity */}
-                <div className="absolute inset-0 bg-portfolio-accent/10 opacity-0 group-hover:opacity-75 transition-all" />
+                <div className="absolute inset-0 bg-portfolio-accent/5 opacity-0 group-hover:opacity-80 transition-all" />
               </div>
-              <div className="p-6 bg-white dark:bg-portfolio-gray-800">
-                <h3 className="text-xl font-medium mb-2 flex items-center gap-2">
-                  {/* Decorative emoji for creativity */}
-                  <span className="animate-bounce text-portfolio-accent">🚀</span>
+              <div className="p-6">
+                <h3 className="text-xl font-medium mb-2 flex items-center gap-2 font-heading">
+                  <span className="text-portfolio-accent">🚀</span>
                   {project.title}
                 </h3>
-                <p className="text-portfolio-gray-600 dark:text-portfolio-gray-300 mb-4">
+                <p className="text-portfolio-gray-600 dark:text-portfolio-gray-300 mb-4 font-sans">
                   {project.description}
                 </p>
-                
                 <h4 className="text-sm uppercase font-semibold text-portfolio-gray-500 dark:text-portfolio-gray-400 mb-2">
                   Technologies Used
                 </h4>
@@ -88,19 +83,17 @@ const ProjectsSection = () => {
                   {project.technologies.map(tech => (
                     <span 
                       key={tech} 
-                      className="px-2 py-1 bg-portfolio-gray-100 dark:bg-portfolio-gray-700 rounded text-xs font-medium icon-bounce"
+                      className="px-2 py-1 bg-portfolio-gray-100 dark:bg-portfolio-gray-700 rounded text-xs font-medium hover-scale-soft font-sans border border-gray-200 dark:border-gray-700"
                     >
-                      {/* Fun accent bullet */}
-                      <span className="inline-block w-1.5 h-1.5 rounded-full bg-portfolio-accent mr-1 animate-pulse"></span>
+                      <span className="inline-block w-1.5 h-1.5 rounded-full bg-portfolio-accent mr-1"></span>
                       {tech}
                     </span>
                   ))}
                 </div>
-                
                 <h4 className="text-sm uppercase font-semibold text-portfolio-gray-500 dark:text-portfolio-gray-400 mb-2">
                   Results
                 </h4>
-                <p className="text-portfolio-gray-600 dark:text-portfolio-gray-400 text-sm">
+                <p className="text-portfolio-gray-600 dark:text-portfolio-gray-400 text-sm font-sans">
                   {project.results}
                 </p>
               </div>
