@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Github, Linkedin, Mail, MapPin } from "lucide-react";
 import { Button } from "../ui/button";
@@ -115,7 +116,7 @@ const ContactSection = () => {
     },
     {
       id: 4,
-      icon: <MapPin className="h-5 w-5 text-portfolio-accent" />,
+      icon: <MapPin className="h-5 w-5 text-portfolio-accent animate-bounce-once" />,
       title: "Location",
       value: "Sivakasi, Tamil Nadu",
       link: null
@@ -125,7 +126,7 @@ const ContactSection = () => {
   return (
     <section id="contact" className="bg-portfolio-gray-50 dark:bg-portfolio-gray-800">
       <div className="container mx-auto px-4">
-        <h2 className="section-title colourful-underline">Contact Me</h2>
+        <h2 className="section-title colourful-underline animate-fade-in">Contact Me</h2>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div className={isVisible ? 'animate-slide-up' : 'opacity-0'}>
@@ -134,7 +135,7 @@ const ContactSection = () => {
             <div className="space-y-6">
               {contactInfo.map(item => (
                 <div key={item.id} className="flex items-start group">
-                  <div className="p-3 bg-white dark:bg-portfolio-gray-900 rounded-full shadow-md mr-4 group-hover:scale-110 transition-transform">
+                  <div className="p-3 bg-white dark:bg-portfolio-gray-900 rounded-full shadow-md mr-4 group-hover:scale-110 transition-transform animate-pulse">
                     {item.icon}
                   </div>
                   <div>
@@ -159,7 +160,7 @@ const ContactSection = () => {
           
           <div className={`bg-white dark:bg-portfolio-gray-900 rounded-lg shadow-md p-6 ${isVisible ? 'animate-slide-up animate-delay-200' : 'opacity-0'}`}>
             <h3 className="text-2xl font-medium mb-6 flex items-center gap-2">
-              <Mail className="w-6 h-6 text-portfolio-accent animate-bounce mr-1" />
+              <Mail className="w-6 h-6 text-portfolio-accent animate-bounce-once mr-1" />
               Send Me a Message
             </h3>
             
