@@ -35,28 +35,28 @@ const CertificationsSection = () => {
       title: "Power BI Data Analyst Associate",
       issuer: "Microsoft",
       date: "May 2024",
-      icon: <BadgeCheck className="text-portfolio-accent animate-spin-slow" />
+      icon: <BadgeCheck className="text-green-500 animate-bounce" />
     },
     {
       id: 2,
       title: "Machine Learning Engineer – Associate",
       issuer: "AWS",
       date: "Jan 2023",
-      icon: <Cloud className="text-portfolio-accent animate-bounce" />
+      icon: <Cloud className="text-blue-400 animate-spin-slow" />
     },
     {
       id: 3,
       title: "Python Data Structures & Algorithms + LEETCODE",
       issuer: "Udemy",
       date: "Apr 2022",
-      icon: <GraduationCap className="text-portfolio-accent animate-pulse" />
+      icon: <GraduationCap className="text-yellow-400 animate-pulse" />
     }
   ];
 
   return (
     <section id="certifications" className="bg-portfolio-gray-50 dark:bg-portfolio-gray-800">
       <div className="container mx-auto px-4">
-        <h2 className="section-title colourful-underline">Certifications</h2>
+        <h2 className="section-title colourful-underline animate-fade-in">Certifications</h2>
 
         <div className="max-w-3xl mx-auto">
           {certifications.map((certification, index) => (
@@ -71,7 +71,10 @@ const CertificationsSection = () => {
                 {certification.icon}
               </div>
               <div>
-                <h3 className="text-xl font-medium mb-2">{certification.title}</h3>
+                <h3 className="text-xl font-medium mb-2 flex items-center gap-2">
+                  <span className="animate-bounce text-portfolio-accent">🎖️</span> 
+                  {certification.title}
+                </h3>
                 <p className="text-portfolio-gray-500 dark:text-portfolio-gray-400">
                   {certification.issuer}
                 </p>

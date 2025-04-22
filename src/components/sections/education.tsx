@@ -55,7 +55,7 @@ const EducationSection = () => {
   return (
     <section id="education" className="bg-white dark:bg-portfolio-gray-900">
       <div className="container mx-auto px-4">
-        <h2 className="section-title colourful-underline">Education</h2>
+        <h2 className="section-title colourful-underline animate-fade-in">Education</h2>
 
         <div className="max-w-3xl mx-auto relative">
           {/* Timeline line */}
@@ -69,9 +69,9 @@ const EducationSection = () => {
               }`}
               style={{ animationDelay: `${index * 150}ms` }}
             >
-              {/* Timeline dot */}
-              <div className="absolute left-0 w-6 h-6 bg-portfolio-accent rounded-full flex items-center justify-center">
-                <div className="w-2 h-2 bg-white rounded-full" />
+              {/* Timeline dot with pulse animation */}
+              <div className="absolute left-0 w-6 h-6 bg-portfolio-accent rounded-full flex items-center justify-center shadow-lg">
+                <div className="w-2 h-2 bg-white rounded-full animate-pulse" />
               </div>
 
               <div className="bg-white dark:bg-portfolio-gray-800 rounded-lg shadow-md p-6 hover:scale-105 hover:shadow-xl transition-transform duration-300">

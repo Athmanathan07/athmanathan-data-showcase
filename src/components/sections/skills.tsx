@@ -9,11 +9,11 @@ interface Skill {
 }
 
 const skillIcons = {
-  "Programming Languages": <Code className="text-portfolio-accent mr-2 inline-block" />,
-  "Developer Tools": <Terminal className="text-portfolio-accent mr-2 inline-block" />,
-  "Frameworks/Libraries": <Cpu className="text-portfolio-accent mr-2 inline-block" />,
-  "Soft Skills": <Users className="text-portfolio-accent mr-2 inline-block" />,
-  "Languages Spoken": <Globe className="text-portfolio-accent mr-2 inline-block" />
+  "Programming Languages": <Code className="text-portfolio-accent mr-2 inline-block animate-bounce-once" />,
+  "Developer Tools": <Terminal className="text-portfolio-accent mr-2 inline-block animate-spin-slow" />,
+  "Frameworks/Libraries": <Cpu className="text-portfolio-accent mr-2 inline-block animate-pulse" />,
+  "Soft Skills": <Users className="text-portfolio-accent mr-2 inline-block animate-bounce" />,
+  "Languages Spoken": <Globe className="text-portfolio-accent mr-2 inline-block animate-bounce-once" />
 };
 
 const SkillsSection = () => {
@@ -66,24 +66,26 @@ const SkillsSection = () => {
   return (
     <section id="skills" className="bg-portfolio-gray-50 dark:bg-portfolio-gray-800">
       <div className="container mx-auto px-4">
-        <h2 className="section-title colourful-underline">My Skills</h2>
+        <h2 className="section-title colourful-underline animate-fade-in">My Skills</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {skillCategories.map((category, index) => (
             <div
               key={category.name}
-              className={`card relative hover:shadow-portfolio-accent/40 ${isVisible ? 'animate-slide-up' : 'opacity-0'} skill-bounce`}
+              className={`card relative hover:shadow-portfolio-accent/40 ${isVisible ? 'animate-slide-up' : 'opacity-0'} skill-bounce transition-transform hover:scale-105`}
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <h3 className="text-xl font-bold mb-4 text-portfolio-accent">
+              <h3 className="text-xl font-bold mb-4 text-portfolio-accent flex items-center">
                 <span className="mr-2">{category.icon}</span> {category.name}
               </h3>
               <div className="flex flex-wrap gap-2">
                 {category.items.map(skill => (
                   <span
                     key={skill}
-                    className="px-3 py-1 bg-portfolio-gray-100 dark:bg-portfolio-gray-700 rounded-full text-sm hover:bg-portfolio-accent/20 transition-all duration-300 icon-bounce font-medium"
+                    className="px-3 py-1 bg-portfolio-gray-100 dark:bg-portfolio-gray-700 rounded-full text-sm hover:bg-portfolio-accent/20 transition-all duration-300 icon-bounce font-medium shadow-sm flex items-center gap-1"
                   >
+                    {/* Fun animated bullet point with accent color */}
+                    <span className="inline-block w-1.5 h-1.5 rounded-full bg-portfolio-accent animate-pulse"></span>
                     {skill}
                   </span>
                 ))}
