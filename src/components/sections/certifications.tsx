@@ -35,21 +35,21 @@ const CertificationsSection = () => {
       title: "Power BI Data Analyst Associate",
       issuer: "Microsoft",
       date: "May 2024",
-      icon: <BadgeCheck className="text-green-500 animate-bounce" />
+      icon: <BadgeCheck className="text-white animate-spin-slow" />
     },
     {
       id: 2,
       title: "Machine Learning Engineer – Associate",
       issuer: "AWS",
       date: "Jan 2023",
-      icon: <Cloud className="text-blue-400 animate-spin-slow" />
+      icon: <Cloud className="text-white animate-spin-slow" />
     },
     {
       id: 3,
       title: "Python Data Structures & Algorithms + LEETCODE",
       issuer: "Udemy",
       date: "Apr 2022",
-      icon: <GraduationCap className="text-yellow-400 animate-pulse" />
+      icon: <GraduationCap className="text-white animate-spin-slow" />
     }
   ];
 

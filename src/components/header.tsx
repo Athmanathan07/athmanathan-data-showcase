@@ -37,8 +37,6 @@ const Header = () => {
     >
       <div className="container mx-auto py-4 flex items-center justify-between">
         <a href="#" className="text-2xl font-heading font-semibold text-portfolio-gray-900 dark:text-white underline-animated flex items-center gap-2">
-          {/* Creative accent with animated mail icon */}
-          <Mail className="text-portfolio-accent animate-bounce-once w-7 h-7 mr-2 drop-shadow-lg" />
           Athmanathan<span className="text-portfolio-accent">.MTA</span>
         </a>
 
@@ -63,9 +61,10 @@ const Header = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Email"
-              className="p-2 text-portfolio-accent bg-white dark:bg-portfolio-gray-900 rounded-full shadow-md hover:scale-110 transition-all group ring-2 ring-portfolio-accent/20"
+              className="p-2 text-portfolio-gray-700 dark:text-portfolio-gray-300 hover:text-portfolio-accent dark:hover:text-portfolio-accent transition-all group"
+
             >
-              <Mail className="h-6 w-6 animate-bounce-once group-hover:animate-bounce text-portfolio-accent" />
+              <Mail className="h-5 w-5" />
             </a>
             <a
               href="https://github.com/Athmanathan07"
@@ -74,7 +73,7 @@ const Header = () => {
               aria-label="GitHub"
               className="p-2 text-portfolio-gray-700 dark:text-portfolio-gray-300 hover:text-portfolio-accent dark:hover:text-portfolio-accent transition-all group"
             >
-              <Github className="h-5 w-5 group-hover:animate-spin-slow" />
+              <Github className="h-5 w-5 " />
             </a>
             <a
               href="https://linkedin.com/in/athmanathan-mta"
@@ -83,7 +82,7 @@ const Header = () => {
               aria-label="LinkedIn"
               className="p-2 text-portfolio-gray-700 dark:text-portfolio-gray-300 hover:text-portfolio-accent dark:hover:text-portfolio-accent transition-all group"
             >
-              <Linkedin className="h-5 w-5 group-hover:animate-pulse" />
+              <Linkedin className="h-5 w-5 " />
             </a>
             <ThemeToggle />
           </div>
@@ -157,9 +156,9 @@ const Header = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Email"
-              className="p-2 text-portfolio-accent bg-white dark:bg-portfolio-gray-900 rounded-full shadow-md hover:scale-110 transition-all group ring-2 ring-portfolio-accent/20"
+              className=""
             >
-              <Mail className="h-6 w-6 animate-bounce-once group-hover:animate-bounce text-portfolio-accent" />
+              <Mail className="h-6 w-6 -" />
             </a>
             <a
               href="https://github.com/Athmanathan07"
@@ -168,7 +167,7 @@ const Header = () => {
               aria-label="GitHub"
               className="p-2 text-portfolio-gray-700 dark:text-portfolio-gray-300 hover:text-portfolio-accent dark:hover:text-portfolio-accent group"
             >
-              <Github className="h-5 w-5 group-hover:animate-spin-slow" />
+              <Github className="h-5 w-5 group-hover:-spin-slow" />
             </a>
             <a
               href="https://linkedin.com/in/athmanathan-mta"
@@ -177,7 +176,7 @@ const Header = () => {
               aria-label="LinkedIn"
               className="p-2 text-portfolio-gray-700 dark:text-portfolio-gray-300 hover:text-portfolio-accent dark:hover:text-portfolio-accent group"
             >
-              <Linkedin className="h-5 w-5 group-hover:animate-pulse" />
+              {/* <Linkedin className="h-5 w-5 group-hover:-pulse" /> */}
             </a>
           </div>
           <div className="px-4 pb-4">

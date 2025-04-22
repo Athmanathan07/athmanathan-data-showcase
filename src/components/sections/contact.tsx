@@ -95,29 +95,29 @@ const ContactSection = () => {
   const contactInfo = [
     {
       id: 1,
-      icon: <Mail className="h-5 w-5 text-portfolio-accent animate-pulse" />,
-      title: "Email",
+      icon: <Mail className="h-5 w-5 text-portfolio-accent animate-bounce-once" />,
+      title: "Email", 
       value: "athmanathanmta@gmail.com",
       link: "mailto:athmanathanmta@gmail.com"
     },
     {
       id: 2,
-      icon: <Linkedin className="h-5 w-5 text-portfolio-accent animate-bounce" />,
-      title: "LinkedIn",
+      icon: <Linkedin className="h-5 w-5 text-portfolio-accent animate-bounce-once" />,
+      title: "LinkedIn",  
       value: "linkedin.com/in/athmanathan-mta",
       link: "https://linkedin.com/in/athmanathan-mta"
     },
     {
       id: 3,
-      icon: <Github className="h-5 w-5 text-portfolio-accent animate-spin-slow" />,
-      title: "GitHub",
+      icon: <Github className="h-5 w-5 text-portfolio-accent animate-bounce-once" />,
+      title: "GitHub",  
       value: "github.com/Athmanathan07",
       link: "https://github.com/Athmanathan07"
     },
     {
       id: 4,
       icon: <MapPin className="h-5 w-5 text-portfolio-accent animate-bounce-once" />,
-      title: "Location",
+      title: "Location",  
       value: "Sivakasi, Tamil Nadu",
       link: null
     }
@@ -135,7 +135,7 @@ const ContactSection = () => {
             <div className="space-y-6">
               {contactInfo.map(item => (
                 <div key={item.id} className="flex items-start group">
-                  <div className="p-3 bg-white dark:bg-portfolio-gray-900 rounded-full shadow-md mr-4 group-hover:scale-110 transition-transform animate-pulse">
+                  <div className="p-3 bg-white dark:bg-portfolio-gray-900 rounded-full shadow-md mr-4 group-hover:scale-110 transition-transform ">
                     {item.icon}
                   </div>
                   <div>
@@ -158,14 +158,14 @@ const ContactSection = () => {
             </div>
           </div>
           
-          <div className={`bg-white dark:bg-portfolio-gray-900 rounded-lg shadow-md p-6 ${isVisible ? 'animate-slide-up animate-delay-200' : 'opacity-0'}`}>
+          <div className={`bg-white dark:bg-portfolio-gray-900 rounded-lg shadow-md p-6 ${isVisible ? '' : 'opacity-0'}`}>
             <h3 className="text-2xl font-medium mb-6 flex items-center gap-2">
-              <Mail className="w-6 h-6 text-portfolio-accent animate-bounce-once mr-1" />
+              <Mail className="w-6 h-6 text-portfolio-accent mr-1" />
               Send Me a Message
             </h3>
             
             {isSubmitted ? (
-              <div className="p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-900 text-green-800 dark:text-green-300 rounded-md animate-fade-in">
+              <div className="p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-900 text-green-800 dark:text-green-300 rounded-md ">
                 Thank you! Your message has been sent successfully.
               </div>
             ) : (
@@ -183,7 +183,7 @@ const ContactSection = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className={`contact-input ${errors.name ? 'border-red-500 dark:border-red-500' : ''}`}
+                    className={`contact-input h-10 ${errors.name ? 'border-red-500 dark:border-red-500' : ''}`}
                   />
                   {errors.name && <p className="mt-1 text-sm text-red-500">{errors.name}</p>}
                 </div>
@@ -201,7 +201,7 @@ const ContactSection = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className={`contact-input ${errors.email ? 'border-red-500 dark:border-red-500' : ''}`}
+                    className={`contact-input h-10 ${errors.email ? 'border-red-500 dark:border-red-500' : ''}`}
                   />
                   {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email}</p>}
                 </div>
@@ -226,7 +226,7 @@ const ContactSection = () => {
                 
                 <Button 
                   type="submit" 
-                  className="w-full bg-portfolio-accent hover:bg-portfolio-accent/90 animate-bounce-once"
+                  className="w-full bg-portfolio-accent hover:bg-portfolio-accent/90 "
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}

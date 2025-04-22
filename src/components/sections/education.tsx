@@ -38,14 +38,14 @@ const EducationSection = () => {
     },
     {
       id: 2,
-      degree: "12th Standard",
+      degree: "Senior Secondary School, 12th",
       institution: "Arasan Model School",
       duration: "",
       score: "79%"
     },
     {
       id: 3,
-      degree: "10th Standard",
+      degree: "Higher Secondary School, 10th",
       institution: "Arasan Mount Litera Zee School",
       duration: "",
       score: "83%"
@@ -77,7 +77,7 @@ const EducationSection = () => {
               <div className="bg-white dark:bg-portfolio-gray-800 rounded-lg shadow-md p-6 hover:scale-105 hover:shadow-xl transition-transform duration-300">
                 <h3 className="text-xl font-medium mb-1 flex items-center gap-2">
                   {index === 0 ? (
-                    <svg className="w-5 h-5 text-portfolio-accent animate-bounce mr-1" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle></svg>
+                    <svg className="w-5 h-5 text-portfolio-accent animate-pulse mr-1" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle></svg>
                   ) : null}
                   {education.degree}
                 </h3>

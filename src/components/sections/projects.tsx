@@ -36,7 +36,7 @@ const ProjectsSection = () => {
       description: "Created interactive Power BI dashboards visualizing marketing campaign results and customer demographics for US expansion strategy.",
       technologies: ["Power BI", "Azure Data Factory", "SQL"],
       results: "Improved decision-making with real-time analytics and automated data pipelines.",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&q=80&w=600"
+      image: "/futurense.jpg"
     },
     {
       id: 2,
@@ -44,7 +44,7 @@ const ProjectsSection = () => {
       description: "Developed predictive models to analyze cricket batsmen performance across formats and conditions.",
       technologies: ["Python", "Pandas", "Seaborn", "Scikit-learn"],
       results: "Identified key performance patterns and created visualizations to highlight batting trends across different match formats.",
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=600"
+      image: "/cricket.webp"
     }
   ];
 
@@ -53,11 +53,11 @@ const ProjectsSection = () => {
       <div className="container mx-auto px-4">
         <h2 className="section-title colourful-underline animate-fade-in">My Projects</h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="flex gap-20 justify-center">
           {projects.map((project, index) => (
             <div 
               key={project.id}
-              className={`overflow-hidden rounded-lg shadow-md transition-all hover:shadow-portfolio-accent/30 hover:-translate-y-2 hover:scale-105 ${
+              className={`overflow-hidden max-w-[400px] rounded-lg shadow-md transition-all hover:shadow-portfolio-accent/30 hover:-translate-y-2 hover:scale-105 ${
                 isVisible ? 'animate-slide-up' : 'opacity-0'
               }`}
               style={{ animationDelay: `${index * 150}ms` }}
