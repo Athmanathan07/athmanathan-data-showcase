@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 
 interface Project {
@@ -45,14 +44,6 @@ const ProjectsSection = () => {
       technologies: ["Python", "Pandas", "Seaborn", "Scikit-learn"],
       results: "Identified key performance patterns and created visualizations to highlight batting trends across different match formats.",
       image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=600"
-    },
-    {
-      id: 3,
-      title: "Financial Data Pipeline",
-      description: "Built an ETL pipeline for processing financial transactions and generating automated reports.",
-      technologies: ["Python", "AWS", "SQL", "Tableau"],
-      results: "Reduced report generation time by 65% with automated data processing workflows.",
-      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&q=80&w=600"
     }
   ];
 

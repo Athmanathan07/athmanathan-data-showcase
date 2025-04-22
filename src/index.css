@@ -155,4 +155,85 @@
   .animate-delay-500 {
     animation-delay: 500ms;
   }
+
+  .underline-animated {
+    position: relative;
+    display: inline-block;
+  }
+  .underline-animated::after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #9b87f5 0%, #404040 100%);
+    border-radius: 8px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+  .underline-animated:hover::after, .underline-animated:focus::after {
+    transform: scaleX(1);
+  }
+  .colourful-underline {
+    position: relative;
+    display: inline-block;
+  }
+  .colourful-underline::after {
+    content: '';
+    position: absolute;
+    left: 50%; bottom: -8px; transform: translateX(-50%);
+    width: 60%; height: 4px;
+    background: linear-gradient(90deg, #9b87f5, #7e69ab, #a3a3a3);
+    border-radius: 9999px;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+  }
+  .colourful-underline:hover::after {
+    opacity: 1;
+  }
+
+  .bounce-on-hover:hover {
+    animation: bounce 0.7s;
+  }
+  .icon-bounce:hover {
+    animation: bounce 0.6s;
+  }
+  .skill-bounce:hover {
+    animation: bounce 0.7s;
+  }
+  .animate-bounce-once {
+    animation: bounce 1s 1;
+  }
+  .navlink-animated::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #9b87f5;
+    transition: width 0.3s;
+  }
+  .navlink-animated:hover::after {
+    width: 100%;
+    transition: width 0.3s;
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0);}
+    30% { transform: translateY(-8px);}
+    50% { transform: translateY(4px);}
+    80% { transform: translateY(-4px);}
+  }
+  .animate-spin-slow {
+    animation: spin 2s linear infinite;
+  }
+  @keyframes spin {
+    to { transform: rotate(360deg);}
+  }
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  @keyframes glow {
+    from { box-shadow: 0 0 0px #9b87f5aa;}
+    to   { box-shadow: 0 0 15px #9b87f5aa;}
+  }
 }

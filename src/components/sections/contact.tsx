@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Github, Linkedin, Mail, MapPin } from "lucide-react";
 import { Button } from "../ui/button";
@@ -46,7 +45,6 @@ const ContactSection = () => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
     
-    // Clear error when user starts typing
     if (errors[name as keyof FormErrors]) {
       setErrors(prev => ({ ...prev, [name]: undefined }));
     }
@@ -81,13 +79,11 @@ const ContactSection = () => {
     if (validateForm()) {
       setIsSubmitting(true);
       
-      // Simulate form submission
       setTimeout(() => {
         setIsSubmitting(false);
         setIsSubmitted(true);
         setFormData({ name: "", email: "", message: "" });
         
-        // Reset after showing success message
         setTimeout(() => {
           setIsSubmitted(false);
         }, 5000);
@@ -98,28 +94,28 @@ const ContactSection = () => {
   const contactInfo = [
     {
       id: 1,
-      icon: <Mail className="h-5 w-5" />,
+      icon: <Mail className="h-5 w-5 text-portfolio-accent animate-pulse" />,
       title: "Email",
       value: "athmanathanmta@gmail.com",
       link: "mailto:athmanathanmta@gmail.com"
     },
     {
       id: 2,
-      icon: <Linkedin className="h-5 w-5" />,
+      icon: <Linkedin className="h-5 w-5 text-portfolio-accent animate-bounce" />,
       title: "LinkedIn",
       value: "linkedin.com/in/athmanathan-mta",
       link: "https://linkedin.com/in/athmanathan-mta"
     },
     {
       id: 3,
-      icon: <Github className="h-5 w-5" />,
+      icon: <Github className="h-5 w-5 text-portfolio-accent animate-spin-slow" />,
       title: "GitHub",
       value: "github.com/Athmanathan07",
       link: "https://github.com/Athmanathan07"
     },
     {
       id: 4,
-      icon: <MapPin className="h-5 w-5" />,
+      icon: <MapPin className="h-5 w-5 text-portfolio-accent" />,
       title: "Location",
       value: "Sivakasi, Tamil Nadu",
       link: null
@@ -129,7 +125,7 @@ const ContactSection = () => {
   return (
     <section id="contact" className="bg-portfolio-gray-50 dark:bg-portfolio-gray-800">
       <div className="container mx-auto px-4">
-        <h2 className="section-title">Contact Me</h2>
+        <h2 className="section-title colourful-underline">Contact Me</h2>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div className={isVisible ? 'animate-slide-up' : 'opacity-0'}>
@@ -137,25 +133,23 @@ const ContactSection = () => {
             
             <div className="space-y-6">
               {contactInfo.map(item => (
-                <div key={item.id} className="flex items-start">
-                  <div className="p-3 bg-white dark:bg-portfolio-gray-900 rounded-full shadow-md mr-4">
+                <div key={item.id} className="flex items-start group">
+                  <div className="p-3 bg-white dark:bg-portfolio-gray-900 rounded-full shadow-md mr-4 group-hover:scale-110 transition-transform">
                     {item.icon}
                   </div>
                   <div>
                     <h4 className="font-medium">{item.title}</h4>
                     {item.link ? (
-                      <a 
-                        href={item.link} 
-                        className="text-portfolio-gray-600 dark:text-portfolio-gray-300 hover:text-portfolio-accent dark:hover:text-portfolio-accent"
+                      <a
+                        href={item.link}
+                        className="text-portfolio-gray-600 dark:text-portfolio-gray-300 hover:text-portfolio-accent dark:hover:text-portfolio-accent transition-colors font-mono flex items-center gap-1"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
                         {item.value}
                       </a>
                     ) : (
-                      <p className="text-portfolio-gray-600 dark:text-portfolio-gray-300">
-                        {item.value}
-                      </p>
+                      <p className="text-portfolio-gray-600 dark:text-portfolio-gray-300">{item.value}</p>
                     )}
                   </div>
                 </div>
@@ -164,10 +158,13 @@ const ContactSection = () => {
           </div>
           
           <div className={`bg-white dark:bg-portfolio-gray-900 rounded-lg shadow-md p-6 ${isVisible ? 'animate-slide-up animate-delay-200' : 'opacity-0'}`}>
-            <h3 className="text-2xl font-medium mb-6">Send Me a Message</h3>
+            <h3 className="text-2xl font-medium mb-6 flex items-center gap-2">
+              <Mail className="w-6 h-6 text-portfolio-accent animate-bounce mr-1" />
+              Send Me a Message
+            </h3>
             
             {isSubmitted ? (
-              <div className="p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-900 text-green-800 dark:text-green-300 rounded-md">
+              <div className="p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-900 text-green-800 dark:text-green-300 rounded-md animate-fade-in">
                 Thank you! Your message has been sent successfully.
               </div>
             ) : (
@@ -228,7 +225,7 @@ const ContactSection = () => {
                 
                 <Button 
                   type="submit" 
-                  className="w-full bg-portfolio-accent hover:bg-portfolio-accent/90"
+                  className="w-full bg-portfolio-accent hover:bg-portfolio-accent/90 animate-bounce-once"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}

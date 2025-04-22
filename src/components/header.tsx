@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { ThemeToggle } from "./theme-toggle";
 import { Button } from "./ui/button";
-import { Github, Linkedin } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -12,13 +12,8 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 50);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -41,7 +36,7 @@ const Header = () => {
       }`}
     >
       <div className="container mx-auto py-4 flex items-center justify-between">
-        <a href="#" className="text-2xl font-heading font-semibold text-portfolio-gray-900 dark:text-white">
+        <a href="#" className="text-2xl font-heading font-semibold text-portfolio-gray-900 dark:text-white underline-animated">
           Athmanathan<span className="text-portfolio-accent">.MTA</span>
         </a>
 
@@ -51,7 +46,7 @@ const Header = () => {
             <a
               key={item.title}
               href={item.href}
-              className="px-4 py-2 rounded-md text-portfolio-gray-700 dark:text-portfolio-gray-300 hover:text-portfolio-accent dark:hover:text-portfolio-accent transition-colors"
+              className="px-4 py-2 rounded-md text-portfolio-gray-700 dark:text-portfolio-gray-300 hover:text-portfolio-accent dark:hover:text-portfolio-accent transition-colors navlink-animated"
             >
               {item.title}
             </a>
@@ -61,29 +56,38 @@ const Header = () => {
         <div className="hidden md:flex items-center space-x-4">
           <div className="flex items-center space-x-2">
             <a
+              href="mailto:athmanathanmta@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Email"
+              className="p-2 text-portfolio-gray-700 dark:text-portfolio-gray-300 hover:text-portfolio-accent dark:hover:text-portfolio-accent transition-all group"
+            >
+              <Mail className="h-5 w-5 group-hover:animate-bounce" />
+            </a>
+            <a
               href="https://github.com/Athmanathan07"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
-              className="p-2 text-portfolio-gray-700 dark:text-portfolio-gray-300 hover:text-portfolio-accent dark:hover:text-portfolio-accent transition-all"
+              className="p-2 text-portfolio-gray-700 dark:text-portfolio-gray-300 hover:text-portfolio-accent dark:hover:text-portfolio-accent transition-all group"
             >
-              <Github className="h-5 w-5" />
+              <Github className="h-5 w-5 group-hover:animate-spin-slow" />
             </a>
             <a
               href="https://linkedin.com/in/athmanathan-mta"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="p-2 text-portfolio-gray-700 dark:text-portfolio-gray-300 hover:text-portfolio-accent dark:hover:text-portfolio-accent transition-all"
+              className="p-2 text-portfolio-gray-700 dark:text-portfolio-gray-300 hover:text-portfolio-accent dark:hover:text-portfolio-accent transition-all group"
             >
-              <Linkedin className="h-5 w-5" />
+              <Linkedin className="h-5 w-5 group-hover:animate-pulse" />
             </a>
             <ThemeToggle />
           </div>
 
           <Button
             asChild
-            className="bg-portfolio-accent hover:bg-portfolio-accent/90 text-white"
+            className="bg-portfolio-accent hover:bg-portfolio-accent/90 text-white transition-transform hover:scale-105"
           >
             <a
               href="https://drive.google.com/file/d/1lsUCymRLmFfyXZW5pYHvZTPZ9g69VAF7/view"
@@ -145,28 +149,37 @@ const Header = () => {
           ))}
           <div className="flex items-center space-x-4 px-4 pt-4 border-t border-portfolio-gray-200 dark:border-portfolio-gray-700">
             <a
+              href="mailto:athmanathanmta@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Email"
+              className="p-2 text-portfolio-gray-700 dark:text-portfolio-gray-300 hover:text-portfolio-accent dark:hover:text-portfolio-accent group"
+            >
+              <Mail className="h-5 w-5 group-hover:animate-bounce" />
+            </a>
+            <a
               href="https://github.com/Athmanathan07"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
-              className="p-2 text-portfolio-gray-700 dark:text-portfolio-gray-300 hover:text-portfolio-accent dark:hover:text-portfolio-accent"
+              className="p-2 text-portfolio-gray-700 dark:text-portfolio-gray-300 hover:text-portfolio-accent dark:hover:text-portfolio-accent group"
             >
-              <Github className="h-5 w-5" />
+              <Github className="h-5 w-5 group-hover:animate-spin-slow" />
             </a>
             <a
               href="https://linkedin.com/in/athmanathan-mta"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="p-2 text-portfolio-gray-700 dark:text-portfolio-gray-300 hover:text-portfolio-accent dark:hover:text-portfolio-accent"
+              className="p-2 text-portfolio-gray-700 dark:text-portfolio-gray-300 hover:text-portfolio-accent dark:hover:text-portfolio-accent group"
             >
-              <Linkedin className="h-5 w-5" />
+              <Linkedin className="h-5 w-5 group-hover:animate-pulse" />
             </a>
           </div>
           <div className="px-4 pb-4">
             <Button
               asChild
-              className="w-full bg-portfolio-accent hover:bg-portfolio-accent/90 text-white"
+              className="w-full bg-portfolio-accent hover:bg-portfolio-accent/90 text-white transition-transform hover:scale-105"
             >
               <a
                 href="https://drive.google.com/file/d/1lsUCymRLmFfyXZW5pYHvZTPZ9g69VAF7/view"

@@ -11,7 +11,7 @@ interface Education {
 
 const EducationSection = () => {
   const [isVisible, setIsVisible] = useState(false);
-  
+
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting) {
@@ -19,10 +19,10 @@ const EducationSection = () => {
         observer.disconnect();
       }
     }, { threshold: 0.1 });
-    
+
     const section = document.getElementById('education');
     if (section) observer.observe(section);
-    
+
     return () => {
       if (section) observer.unobserve(section);
     };
@@ -55,16 +55,16 @@ const EducationSection = () => {
   return (
     <section id="education" className="bg-white dark:bg-portfolio-gray-900">
       <div className="container mx-auto px-4">
-        <h2 className="section-title">Education</h2>
-        
+        <h2 className="section-title colourful-underline">Education</h2>
+
         <div className="max-w-3xl mx-auto relative">
           {/* Timeline line */}
-          <div className="absolute left-3 top-4 bottom-4 w-0.5 bg-portfolio-gray-200 dark:bg-portfolio-gray-700" />
-          
+          <div className="absolute left-3 top-4 bottom-4 w-0.5 bg-portfolio-gray-200 dark:bg-portfolio-gray-700 z-0 animate-glow"></div>
+
           {educations.map((education, index) => (
-            <div 
+            <div
               key={education.id}
-              className={`mb-8 pl-12 relative ${
+              className={`mb-8 pl-12 relative z-10 ${
                 isVisible ? 'animate-slide-up' : 'opacity-0'
               }`}
               style={{ animationDelay: `${index * 150}ms` }}
@@ -73,9 +73,14 @@ const EducationSection = () => {
               <div className="absolute left-0 w-6 h-6 bg-portfolio-accent rounded-full flex items-center justify-center">
                 <div className="w-2 h-2 bg-white rounded-full" />
               </div>
-              
-              <div className="bg-white dark:bg-portfolio-gray-800 rounded-lg shadow-md p-6">
-                <h3 className="text-xl font-medium mb-1">{education.degree}</h3>
+
+              <div className="bg-white dark:bg-portfolio-gray-800 rounded-lg shadow-md p-6 hover:scale-105 hover:shadow-xl transition-transform duration-300">
+                <h3 className="text-xl font-medium mb-1 flex items-center gap-2">
+                  {index === 0 ? (
+                    <svg className="w-5 h-5 text-portfolio-accent animate-bounce mr-1" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle></svg>
+                  ) : null}
+                  {education.degree}
+                </h3>
                 <p className="text-portfolio-gray-500 dark:text-portfolio-gray-400 mb-2">
                   {education.institution} {education.duration && `(${education.duration})`}
                 </p>
