@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 
 interface Education {
@@ -7,6 +6,7 @@ interface Education {
   institution: string;
   duration: string;
   score: string;
+  image: string;
 }
 
 const EducationSection = () => {
@@ -34,21 +34,24 @@ const EducationSection = () => {
       degree: "B.Tech in Computer Science and Engineering",
       institution: "Lovely Professional University",
       duration: "2022–2026",
-      score: "CGPA: 6.7"
+      score: "CGPA: 6.7",
+      image: "/education/lpu.jpeg"
     },
     {
       id: 2,
       degree: "Senior Secondary School, 12th",
       institution: "Arasan Model School",
       duration: "",
-      score: "79%"
+      score: "79%",
+      image: "/education/arasan_model_school.jpg"
     },
     {
       id: 3,
       degree: "Higher Secondary School, 10th",
       institution: "Arasan Mount Litera Zee School",
       duration: "",
-      score: "83%"
+      score: "83%",
+      image: "/education/mount_litera.jpg"
     }
   ];
 
@@ -59,26 +62,25 @@ const EducationSection = () => {
 
         <div className="max-w-3xl mx-auto relative">
           {/* Timeline line */}
-          <div className="absolute left-3 top-4 bottom-4 w-0.5 bg-portfolio-gray-200 dark:bg-portfolio-gray-700 z-0 animate-glow"></div>
+          <div className="absolute left-3 top-4 bottom-4 w-0.5 bg-portfolio-gray-200 dark:bg-portfolio-gray-700 z-0"></div>
 
           {educations.map((education, index) => (
             <div
               key={education.id}
-              className={`mb-8 pl-12 relative z-10 ${
-                isVisible ? 'animate-slide-up' : 'opacity-0'
-              }`}
-              style={{ animationDelay: `${index * 150}ms` }}
+              className={`mb-8 pl-12 relative z-10 flex items-center gap-6 transition-opacity duration-700 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+              style={{ transitionDelay: `${index * 150}ms` }}
             >
-              {/* Timeline dot with pulse animation */}
+              {/* Timeline dot */}
               <div className="absolute left-0 w-6 h-6 bg-portfolio-accent rounded-full flex items-center justify-center shadow-lg">
-                <div className="w-2 h-2 bg-white rounded-full animate-pulse" />
+                <div className="w-2 h-2 bg-white rounded-full" />
               </div>
-
-              <div className="bg-white dark:bg-portfolio-gray-800 rounded-lg shadow-md p-6 hover:scale-105 hover:shadow-xl transition-transform duration-300">
+              <img
+                src={education.image}
+                alt={education.institution}
+                className={`w-20 h-20 object-contain ${index === 0 ? 'rounded-full border-2 border-purple-400' : 'rounded-full border-2 border-purple-400'} shadow-md bg-white dark:bg-portfolio-gray-800`}
+              />
+              <div className="bg-white dark:bg-portfolio-gray-800 rounded-lg shadow-md p-6 hover:scale-105 hover:shadow-xl transition-transform duration-300 flex-1">
                 <h3 className="text-xl font-medium mb-1 flex items-center gap-2">
-                  {index === 0 ? (
-                    <svg className="w-5 h-5 text-portfolio-accent animate-pulse mr-1" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle></svg>
-                  ) : null}
                   {education.degree}
                 </h3>
                 <p className="text-portfolio-gray-500 dark:text-portfolio-gray-400 mb-2">

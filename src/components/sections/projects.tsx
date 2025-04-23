@@ -49,18 +49,16 @@ const ProjectsSection = () => {
   ];
 
   return (
-    <section id="projects" className="bg-white dark:bg-portfolio-gray-900">
+    <section id="projects" className="bg-portfolio-gray-50 dark:bg-portfolio-gray-800">
       <div className="container mx-auto px-4">
-        <h2 className="section-title colourful-underline animate-fade-in">My Projects</h2>
+        <h2 className="section-title colourful-underline">My Projects</h2>
         
         <div className="flex gap-20 justify-center">
           {projects.map((project, index) => (
             <div 
-              key={project.id}
-              className={`overflow-hidden max-w-[400px] rounded-lg shadow-md transition-all hover:shadow-portfolio-accent/30 hover:-translate-y-2 hover:scale-105 ${
-                isVisible ? 'animate-slide-up' : 'opacity-0'
-              }`}
-              style={{ animationDelay: `${index * 150}ms` }}
+              key={project.id} 
+              className={`overflow-hidden max-w-[400px] rounded-lg bg-white dark:bg-portfolio-gray-900 shadow-md  hover:shadow-portfolio-accent/30 hover:-translate-y-2 hover:scale-105 transition-opacity duration-700 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+              style={{ transitionDelay: `${index * 150}ms` }}
             >
               <div className="h-48 overflow-hidden relative group">
                 <img 
@@ -71,10 +69,10 @@ const ProjectsSection = () => {
                 {/* Accent overlay on hover for creativity */}
                 <div className="absolute inset-0 bg-portfolio-accent/10 opacity-0 group-hover:opacity-75 transition-all" />
               </div>
-              <div className="p-6 bg-white dark:bg-portfolio-gray-800">
+              <div className="p-6 bg-white dark:bg-portfolio-gray-900">
                 <h3 className="text-xl font-medium mb-2 flex items-center gap-2">
                   {/* Decorative emoji for creativity */}
-                  <span className="animate-bounce text-portfolio-accent">🚀</span>
+                  <span className="text-portfolio-accent">🚀</span>
                   {project.title}
                 </h3>
                 <p className="text-portfolio-gray-600 dark:text-portfolio-gray-300 mb-4">
@@ -88,10 +86,9 @@ const ProjectsSection = () => {
                   {project.technologies.map(tech => (
                     <span 
                       key={tech} 
-                      className="px-2 py-1 bg-portfolio-gray-100 dark:bg-portfolio-gray-700 rounded text-xs font-medium icon-bounce"
+                      className="px-2 py-1 bg-portfolio-gray-100 dark:bg-portfolio-gray-700 rounded text-xs font-medium"
                     >
-                      {/* Fun accent bullet */}
-                      <span className="inline-block w-1.5 h-1.5 rounded-full bg-portfolio-accent mr-1 animate-pulse"></span>
+                      <span className="inline-block w-1.5 h-1.5 rounded-full bg-portfolio-accent mr-1"></span>
                       {tech}
                     </span>
                   ))}

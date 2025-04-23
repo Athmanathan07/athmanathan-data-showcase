@@ -35,26 +35,26 @@ const CertificationsSection = () => {
       title: "Power BI Data Analyst Associate",
       issuer: "Microsoft",
       date: "May 2024",
-      icon: <BadgeCheck className="text-white animate-spin-slow" />
+      icon: <BadgeCheck className="text-white" />
     },
     {
       id: 2,
       title: "Machine Learning Engineer – Associate",
       issuer: "AWS",
       date: "Jan 2023",
-      icon: <Cloud className="text-white animate-spin-slow" />
+      icon: <Cloud className="text-white" />
     },
     {
       id: 3,
       title: "Python Data Structures & Algorithms + LEETCODE",
       issuer: "Udemy",
       date: "Apr 2022",
-      icon: <GraduationCap className="text-white animate-spin-slow" />
+      icon: <GraduationCap className="text-white" />
     }
   ];
 
   return (
-    <section id="certifications" className="bg-portfolio-gray-50 dark:bg-portfolio-gray-800">
+    <section id="certifications" className="bg-white dark:bg-portfolio-gray-900">
       <div className="container mx-auto px-4">
         <h2 className="section-title colourful-underline animate-fade-in">Certifications</h2>
 
@@ -62,17 +62,15 @@ const CertificationsSection = () => {
           {certifications.map((certification, index) => (
             <div
               key={certification.id}
-              className={`mb-6 bg-white dark:bg-portfolio-gray-900 rounded-lg shadow-md p-6 flex items-start gap-2 ${
-                isVisible ? 'animate-slide-up' : 'opacity-0'
-              }`}
-              style={{ animationDelay: `${index * 150}ms` }}
+              className={`mb-6 bg-white dark:bg-portfolio-gray-800 rounded-lg shadow-md p-6 flex items-start gap-2 transition-opacity duration-700 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+              style={{ transitionDelay: `${index * 150}ms` }}
             >
               <div className="mr-4 w-12 h-12 bg-portfolio-accent/90 text-white rounded-full flex items-center justify-center font-bold text-xl flex-shrink-0 shadow-lg">
                 {certification.icon}
               </div>
               <div>
                 <h3 className="text-xl font-medium mb-2 flex items-center gap-2">
-                  <span className="animate-bounce text-portfolio-accent">🎖️</span> 
+                  <span className="text-portfolio-accent">🎖️</span> 
                   {certification.title}
                 </h3>
                 <p className="text-portfolio-gray-500 dark:text-portfolio-gray-400">
